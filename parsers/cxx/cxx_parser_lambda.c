@@ -92,6 +92,10 @@ boolean cxxParserHandleLambda(CXXToken * pParenthesis)
 	CXXToken * pAfterParenthesis = pParenthesis ? pParenthesis->pNext : NULL;
 
 	CXXToken * pCaptureList = NULL;
+
+	CXXToken * pTypeStart = NULL;
+	CXXToken * pTypeEnd;
+
 	
 	if(pParenthesis)
 	{
@@ -116,8 +120,7 @@ boolean cxxParserHandleLambda(CXXToken * pParenthesis)
 	)
 		pAfterParenthesis = pAfterParenthesis->pNext;
 
-	CXXToken * pTypeStart = NULL;
-	CXXToken * pTypeEnd;
+	
 
 	if(
 			pAfterParenthesis &&

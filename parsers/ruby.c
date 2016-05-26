@@ -96,11 +96,12 @@ static boolean canMatch (const unsigned char** s, const char* literal,
 {
 	const int literal_length = strlen (literal);
 	const int s_length = strlen ((const char *)*s);
+	const unsigned char next_char = *(*s + literal_length);
 
 	if (s_length < literal_length)
 		return FALSE;
 
-	const unsigned char next_char = *(*s + literal_length);
+	
 	if (strncmp ((const char*) *s, literal, literal_length) != 0)
 	{
 	    return FALSE;
@@ -199,7 +200,7 @@ static void emitRubyTag (vString* name, rubyKind kind)
 	lvl = nestingLevelsGetCurrent (nesting);
 	parent = getEntryOfNestingLevel (lvl);
 	if (parent)
-		parent_kind =  parent->kind - RubyKinds;
+		parent_kind =  (rubyKind)(parent->kind - RubyKinds);
 
 	qualified_name = vStringValue (name);
 	unqualified_name = strrchr (qualified_name, SCOPE_SEPARATOR);

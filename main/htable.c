@@ -195,7 +195,7 @@ extern void       hashTableForeachItem (hashTable *htable, hashTableForeachFunc 
 
 static void count (void *key __unused__, void *value __unused__, void *data)
 {
-	int *c = data;
+	int *c = (int*)data;
 	++*c;
 }
 

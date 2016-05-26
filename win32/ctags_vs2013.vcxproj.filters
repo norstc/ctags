@@ -1,451 +1,149 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
-    </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
-    </Filter>
-    <Filter Include="Source Files\Parsers">
-      <UniqueIdentifier>{f77929ed-5bdf-496f-9ea6-c3c6180e6ca5}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Main">
-      <UniqueIdentifier>{45974afc-d1c3-4696-a74a-60eeaa6e1441}</UniqueIdentifier>
-    </Filter>
+    <ClCompile Include="..\main\htable.c" />
+    <ClCompile Include="..\main\nestlevel.c" />
+    <ClCompile Include="..\main\selectors.c" />
+    <ClCompile Include="..\parsers\ada.c" />
+    <ClCompile Include="..\parsers\ant.c" />
+    <ClCompile Include="..\main\args.c" />
+    <ClCompile Include="..\parsers\asm.c" />
+    <ClCompile Include="..\parsers\asp.c" />
+    <ClCompile Include="..\parsers\awk.c" />
+    <ClCompile Include="..\parsers\basic.c" />
+    <ClCompile Include="..\parsers\beta.c" />
+    <ClCompile Include="..\parsers\c.c" />
+    <ClCompile Include="..\parsers\clojure.c" />
+    <ClCompile Include="..\parsers\cobol.c" />
+    <ClCompile Include="..\optlib\CoffeeScript.c" />
+    <ClCompile Include="..\parsers\css.c" />
+    <ClCompile Include="..\optlib\ctags-optlib.c" />
+    <ClCompile Include="..\main\debug.c" />
+    <ClCompile Include="..\parsers\diff.c" />
+    <ClCompile Include="..\parsers\dosbatch.c" />
+    <ClCompile Include="..\parsers\dts.c" />
+    <ClCompile Include="..\parsers\eiffel.c" />
+    <ClCompile Include="..\main\entry.c" />
+    <ClCompile Include="..\parsers\erlang.c" />
+    <ClCompile Include="..\parsers\falcon.c" />
+    <ClCompile Include="..\main\field.c" />
+    <ClCompile Include="..\main\flags.c" />
+    <ClCompile Include="..\parsers\flex.c" />
+    <ClCompile Include="..\main\fmt.c" />
+    <ClCompile Include="..\fnmatch\fnmatch.c" />
+    <ClCompile Include="..\parsers\fortran.c" />
+    <ClCompile Include="..\optlib\gdbinit.c" />
+    <ClCompile Include="..\main\get.c" />
+    <ClCompile Include="..\parsers\go.c" />
+    <ClCompile Include="..\parsers\html.c" />
+    <ClCompile Include="..\parsers\jprop.c" />
+    <ClCompile Include="..\parsers\jscript.c" />
+    <ClCompile Include="..\parsers\json.c" />
+    <ClCompile Include="..\main\keyword.c" />
+    <ClCompile Include="..\main\kind.c" />
+    <ClCompile Include="..\parsers\lisp.c" />
+    <ClCompile Include="..\main\lregex.c" />
+    <ClCompile Include="..\main\lxcmd.c" />
+    <ClCompile Include="..\main\lxpath.c" />
+    <ClCompile Include="..\parsers\lua.c" />
+    <ClCompile Include="..\optlib\m4.c" />
+    <ClCompile Include="..\main\main.c" />
+    <ClCompile Include="..\parsers\make.c" />
+    <ClCompile Include="..\optlib\man.c" />
+    <ClCompile Include="..\parsers\matlab.c" />
+    <ClCompile Include="..\parsers\myrddin.c" />
+    <ClCompile Include="..\parsers\objc.c" />
+    <ClCompile Include="..\parsers\ocaml.c" />
+    <ClCompile Include="..\main\options.c" />
+    <ClCompile Include="..\main\parse.c" />
+    <ClCompile Include="..\parsers\pascal.c" />
+    <ClCompile Include="..\parsers\perl.c" />
+    <ClCompile Include="..\parsers\perl6.c" />
+    <ClCompile Include="..\parsers\php.c" />
+    <ClCompile Include="..\main\ptag.c" />
+    <ClCompile Include="..\parsers\python.c" />
+    <ClCompile Include="..\main\read.c" />
+    <ClCompile Include="..\parsers\cxx\cxx.c" />
+    <ClCompile Include="..\parsers\cxx\cxx_debug.c" />
+    <ClCompile Include="..\parsers\cxx\cxx_keyword.c" />
+    <ClCompile Include="..\parsers\cxx\cxx_parser.c" />
+    <ClCompile Include="..\parsers\cxx\cxx_parser_block.c" />
+    <ClCompile Include="..\parsers\cxx\cxx_parser_function.c" />
+    <ClCompile Include="..\parsers\cxx\cxx_parser_lambda.c" />
+    <ClCompile Include="..\parsers\cxx\cxx_parser_namespace.c" />
+    <ClCompile Include="..\parsers\cxx\cxx_parser_template.c" />
+    <ClCompile Include="..\parsers\cxx\cxx_parser_tokenizer.c" />
+    <ClCompile Include="..\parsers\cxx\cxx_parser_typedef.c" />
+    <ClCompile Include="..\parsers\cxx\cxx_parser_using.c" />
+    <ClCompile Include="..\parsers\cxx\cxx_parser_variable.c" />
+    <ClCompile Include="..\parsers\cxx\cxx_scope.c" />
+    <ClCompile Include="..\parsers\cxx\cxx_tag.c" />
+    <ClCompile Include="..\parsers\cxx\cxx_token.c" />
+    <ClCompile Include="..\parsers\cxx\cxx_token_chain.c" />
+    <ClCompile Include="..\gnu_regex\regex.c" />
+    <ClCompile Include="..\main\repoinfo.c" />
+    <ClCompile Include="..\parsers\rst.c" />
+    <ClCompile Include="..\parsers\r.c" />
+    <ClCompile Include="..\parsers\rexx.c" />
+    <ClCompile Include="..\main\routines.c" />
+    <ClCompile Include="..\parsers\ruby.c" />
+    <ClCompile Include="..\parsers\rust.c" />
+    <ClCompile Include="..\parsers\scheme.c" />
+    <ClCompile Include="..\parsers\sh.c" />
+    <ClCompile Include="..\parsers\slang.c" />
+    <ClCompile Include="..\parsers\sml.c" />
+    <ClCompile Include="..\main\sort.c" />
+    <ClCompile Include="..\parsers\sql.c" />
+    <ClCompile Include="..\main\strlist.c" />
+    <ClCompile Include="..\parsers\tcl.c" />
+    <ClCompile Include="..\parsers\tex.c" />
+    <ClCompile Include="..\parsers\ttcn.c" />
+    <ClCompile Include="..\parsers\verilog.c" />
+    <ClCompile Include="..\parsers\vhdl.c" />
+    <ClCompile Include="..\parsers\vim.c" />
+    <ClCompile Include="..\main\vstring.c" />
+    <ClCompile Include="..\parsers\windres.c" />
+    <ClCompile Include="..\main\xtag.c" />
+    <ClCompile Include="..\main\mio.c" />
+    <ClCompile Include="..\parsers\yacc.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\parsers\ada.c">
-      <Filter>Source Files\Parsers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\parsers\ant.c">
-      <Filter>Source Files\Parsers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\parsers\asm.c">
-      <Filter>Source Files\Parsers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\parsers\asp.c">
-      <Filter>Source Files\Parsers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\parsers\awk.c">
-      <Filter>Source Files\Parsers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\parsers\basic.c">
-      <Filter>Source Files\Parsers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\parsers\beta.c">
-      <Filter>Source Files\Parsers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\optlib\CoffeeScript.c">
-      <Filter>Source Files\Optlib</Filter>
-    </ClCompile>
-    <ClCompile Include="..\parsers\c.c">
-      <Filter>Source Files\Parsers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\parsers\clojure.c">
-      <Filter>Source Files\Parsers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\parsers\cobol.c">
-      <Filter>Source Files\Parsers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\parsers\css.c">
-      <Filter>Source Files\Parsers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\optlib\ctags-optlib.c">
-      <Filter>Source Files\Optlib</Filter>
-    </ClCompile>
-    <ClCompile Include="..\parsers\diff.c">
-      <Filter>Source Files\Parsers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\parsers\dosbatch.c">
-      <Filter>Source Files\Parsers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\parsers\dts.c">
-      <Filter>Source Files\Parsers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\parsers\eiffel.c">
-      <Filter>Source Files\Parsers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\parsers\erlang.c">
-      <Filter>Source Files\Parsers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\parsers\falcon.c">
-      <Filter>Source Files\Parsers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\parsers\flex.c">
-      <Filter>Source Files\Parsers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\parsers\fortran.c">
-      <Filter>Source Files\Parsers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\optlib\gdbinit.c">
-      <Filter>Source Files\Optlib</Filter>
-    </ClCompile>
-    <ClCompile Include="..\parsers\go.c">
-      <Filter>Source Files\Parsers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\parsers\html.c">
-      <Filter>Source Files\Parsers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\parsers\jprop.c">
-      <Filter>Source Files\Parsers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\parsers\jscript.c">
-      <Filter>Source Files\Parsers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\parsers\json.c">
-      <Filter>Source Files\Parsers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\parsers\lisp.c">
-      <Filter>Source Files\Parsers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\parsers\lua.c">
-      <Filter>Source Files\Parsers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\optlib\m4.c">
-      <Filter>Source Files\Optlib</Filter>
-    </ClCompile>
-    <ClCompile Include="..\parsers\make.c">
-      <Filter>Source Files\Parsers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\parsers\man.c">
-      <Filter>Source Files\Parsers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\parsers\matlab.c">
-      <Filter>Source Files\Parsers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\parsers\myrddin.c">
-      <Filter>Source Files\Parsers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\parsers\objc.c">
-      <Filter>Source Files\Parsers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\parsers\ocaml.c">
-      <Filter>Source Files\Parsers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\parsers\pascal.c">
-      <Filter>Source Files\Parsers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\parsers\perl.c">
-      <Filter>Source Files\Parsers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\parsers\python.c">
-      <Filter>Source Files\Parsers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\parsers\r.c">
-      <Filter>Source Files\Parsers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\parsers\rexx.c">
-      <Filter>Source Files\Parsers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\parsers\ruby.c">
-      <Filter>Source Files\Parsers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\parsers\rust.c">
-      <Filter>Source Files\Parsers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\parsers\scheme.c">
-      <Filter>Source Files\Parsers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\parsers\sh.c">
-      <Filter>Source Files\Parsers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\parsers\slang.c">
-      <Filter>Source Files\Parsers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\parsers\sml.c">
-      <Filter>Source Files\Parsers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\parsers\sql.c">
-      <Filter>Source Files\Parsers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\parsers\tcl.c">
-      <Filter>Source Files\Parsers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\parsers\tex.c">
-      <Filter>Source Files\Parsers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\parsers\ttcn.c">
-      <Filter>Source Files\Parsers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\parsers\verilog.c">
-      <Filter>Source Files\Parsers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\parsers\vhdl.c">
-      <Filter>Source Files\Parsers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\parsers\vim.c">
-      <Filter>Source Files\Parsers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\parsers\windres.c">
-      <Filter>Source Files\Parsers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\parsers\yacc.c">
-      <Filter>Source Files\Parsers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\parsers\php.c">
-      <Filter>Source Files\Parsers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\main\args.c">
-      <Filter>Source Files\Main</Filter>
-    </ClCompile>
-    <ClCompile Include="..\main\debug.c">
-      <Filter>Source Files\Main</Filter>
-    </ClCompile>
-    <ClCompile Include="..\main\entry.c">
-      <Filter>Source Files\Main</Filter>
-    </ClCompile>
-    <ClCompile Include="..\main\field.c">
-      <Filter>Source Files\Main</Filter>
-    </ClCompile>
-    <ClCompile Include="..\main\flags.c">
-      <Filter>Source Files\Main</Filter>
-    </ClCompile>
-    <ClCompile Include="..\main\fmt.c">
-      <Filter>Source Files\Main</Filter>
-    </ClCompile>
-    <ClCompile Include="..\fnmatch\fnmatch.c">
-      <Filter>Source Files\Main</Filter>
-    </ClCompile>
-    <ClCompile Include="..\main\get.c">
-      <Filter>Source Files\Main</Filter>
-    </ClCompile>
-    <ClCompile Include="..\main\htable.c">
-      <Filter>Source Files\Main</Filter>
-    </ClCompile>
-    <ClCompile Include="..\main\keyword.c">
-      <Filter>Source Files\Main</Filter>
-    </ClCompile>
-    <ClCompile Include="..\main\kind.c">
-      <Filter>Source Files\Main</Filter>
-    </ClCompile>
-    <ClCompile Include="..\main\lregex.c">
-    <ClCompile Include="..\main\lregex.c">
-      <Filter>Source Files\Main</Filter>
-    </ClCompile>
-    <ClCompile Include="..\main\lxcmd.c">
-      <Filter>Source Files\Main</Filter>
-    </ClCompile>
-    <ClCompile Include="..\main\lxpath.c">
-      <Filter>Source Files\Main</Filter>
-    </ClCompile>
-    <ClCompile Include="..\main\main.c">
-      <Filter>Source Files\Main</Filter>
-    </ClCompile>
-    <ClCompile Include="..\main\options.c">
-      <Filter>Source Files\Main</Filter>
-    </ClCompile>
-    <ClCompile Include="..\main\parse.c">
-      <Filter>Source Files\Main</Filter>
-    </ClCompile>
-    <ClCompile Include="..\main\read.c">
-      <Filter>Source Files\Main</Filter>
-    </ClCompile>
-    <ClCompile Include="..\gnu_regex\regex.c">
-      <Filter>Source Files\Main</Filter>
-    </ClCompile>
-    <ClCompile Include="..\main\routines.c">
-      <Filter>Source Files\Main</Filter>
-    </ClCompile>
-    <ClCompile Include="..\main\sort.c">
-      <Filter>Source Files\Main</Filter>
-    </ClCompile>
-    <ClCompile Include="..\main\strlist.c">
-      <Filter>Source Files\Main</Filter>
-    </ClCompile>
-    <ClCompile Include="..\main\vstring.c">
-      <Filter>Source Files\Main</Filter>
-    </ClCompile>
-    <ClCompile Include="..\parsers\rst.c">
-      <Filter>Source Files\Parsers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\main\nestlevel.c">
-      <Filter>Source Files\Main</Filter>
-    </ClCompile>
-    <ClCompile Include="..\parsers\perl6.c">
-      <Filter>Source Files\Parsers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\main\selectors.c">
-      <Filter>Source Files\Main</Filter>
-    </ClCompile>
-    <ClCompile Include="..\main\xtag.c">
-      <Filter>Source Files\Main</Filter>
-    </ClCompile>
-    <ClCompile Include="..\main\mio.c">
-      <Filter>Source Files\Main</Filter>
-    </ClCompile>
-    <ClCompile Include="..\main\repoinfo.c">
-      <Filter>Source Files\Main</Filter>
-    </ClCompile>
-    <ClCompile Include="..\main\ptag.c">
-      <Filter>Source Files\Main</Filter>
-    </ClCompile>
-    <ClCompile Include="..\parsers\cxx\cxx.c">
-      <Filter>Source Files\Main</Filter>
-    </ClCompile>
-    <ClCompile Include="..\parsers\cxx\cxx_debug.c">
-      <Filter>Source Files\Main</Filter>
-    </ClCompile>
-    <ClCompile Include="..\parsers\cxx\cxx_keyword.c">
-      <Filter>Source Files\Main</Filter>
-    </ClCompile>
-    <ClCompile Include="..\parsers\cxx\cxx_parser.c">
-      <Filter>Source Files\Main</Filter>
-    </ClCompile>
-    <ClCompile Include="..\parsers\cxx\cxx_parser_block.c">
-      <Filter>Source Files\Main</Filter>
-    </ClCompile>
-    <ClCompile Include="..\parsers\cxx\cxx_parser_function.c">
-      <Filter>Source Files\Main</Filter>
-    </ClCompile>
-    <ClCompile Include="..\parsers\cxx\cxx_parser_lambda.c">
-      <Filter>Source Files\Main</Filter>
-    </ClCompile>
-    <ClCompile Include="..\parsers\cxx\cxx_parser_namespace.c">
-      <Filter>Source Files\Main</Filter>
-    </ClCompile>
-    <ClCompile Include="..\parsers\cxx\cxx_parser_template.c">
-      <Filter>Source Files\Main</Filter>
-    </ClCompile>
-    <ClCompile Include="..\parsers\cxx\cxx_parser_tokenizer.c">
-      <Filter>Source Files\Main</Filter>
-    </ClCompile>
-    <ClCompile Include="..\parsers\cxx\cxx_parser_typedef.c">
-      <Filter>Source Files\Main</Filter>
-    </ClCompile>
-    <ClCompile Include="..\parsers\cxx\cxx_parser_using.c">
-      <Filter>Source Files\Main</Filter>
-    </ClCompile>
-    <ClCompile Include="..\parsers\cxx\cxx_scope.c">
-      <Filter>Source Files\Main</Filter>
-    </ClCompile>
-    <ClCompile Include="..\parsers\cxx\cxx_tag.c">
-      <Filter>Source Files\Main</Filter>
-    </ClCompile>
-    <ClCompile Include="..\parsers\cxx\cxx_token.c">
-      <Filter>Source Files\Main</Filter>
-    </ClCompile>
-    <ClCompile Include="..\parsers\cxx\cxx_token_chain.c">
-      <Filter>Source Files\Main</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\main\e_msoft.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\main\args.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\main\entry.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\main\field.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\main\flags.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\main\fmt.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\main\get.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\main\htable.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\main\keyword.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\main\kind.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\main\main.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\main\options.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\main\parse.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\main\parsers.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\main\read.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\main\sort.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\main\strlist.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\main\vstring.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\gnu_regex\regex.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\fnmatch\fnmatch.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\main\general.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\main\routines.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\main\ctags.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\main\debug.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\main\nestlevel.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\main\selectors.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-   <ClInclude Include="..\main\xtag.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\main\mio.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-   <ClInclude Include="..\main\ptag.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-   <ClInclude Include="..\parsers\cxx\cxx_debug.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-   <ClInclude Include="..\parsers\cxx\cxx_keyword.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-   <ClInclude Include="..\parsers\cxx\cxx_parser.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-   <ClInclude Include="..\parsers\cxx\cxx_parser_internal.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-   <ClInclude Include="..\parsers\cxx\cxx_scope.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-   <ClInclude Include="..\parsers\cxx\cxx_tag.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-   <ClInclude Include="..\parsers\cxx\cxx_token.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-   <ClInclude Include="..\parsers\cxx\cxx_token_chain.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
+    <ClInclude Include="..\fnmatch\fnmatch.h" />
+    <ClInclude Include="..\main\args.h" />
+    <ClInclude Include="..\main\ctags.h" />
+    <ClInclude Include="..\main\debug.h" />
+    <ClInclude Include="..\main\entry.h" />
+    <ClInclude Include="..\main\e_msoft.h" />
+    <ClInclude Include="..\main\field.h" />
+    <ClInclude Include="..\main\flags.h" />
+    <ClInclude Include="..\main\fmt.h" />
+    <ClInclude Include="..\main\general.h" />
+    <ClInclude Include="..\main\get.h" />
+    <ClInclude Include="..\gnu_regex\regex.h" />
+    <ClInclude Include="..\main\htable.h" />
+    <ClInclude Include="..\main\keyword.h" />
+    <ClInclude Include="..\main\kind.h" />
+    <ClInclude Include="..\main\main.h" />
+    <ClInclude Include="..\main\nestlevel.h" />
+    <ClInclude Include="..\main\options.h" />
+    <ClInclude Include="..\main\parse.h" />
+    <ClInclude Include="..\main\parsers.h" />
+    <ClInclude Include="..\main\ptag.h" />
+    <ClInclude Include="..\main\read.h" />
+    <ClInclude Include="..\main\routines.h" />
+    <ClInclude Include="..\main\selectors.h" />
+    <ClInclude Include="..\main\sort.h" />
+    <ClInclude Include="..\main\strlist.h" />
+    <ClInclude Include="..\main\vstring.h" />
+    <ClInclude Include="..\main\xtag.h" />
+    <ClInclude Include="..\main\mio.h" />
+    <ClInclude Include="..\parsers\cxx\cxx_debug.h" />
+    <ClInclude Include="..\parsers\cxx\cxx_keyword.h" />
+    <ClInclude Include="..\parsers\cxx\cxx_parser.h" />
+    <ClInclude Include="..\parsers\cxx\cxx_parser_internal.h" />
+    <ClInclude Include="..\parsers\cxx\cxx_scope.h" />
+    <ClInclude Include="..\parsers\cxx\cxx_tag.h" />
+    <ClInclude Include="..\parsers\cxx\cxx_token.h" />
+    <ClInclude Include="..\parsers\cxx\cxx_token_chain.h" />
   </ItemGroup>
 </Project>

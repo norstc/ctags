@@ -42,7 +42,9 @@ int cxxParserMaybeExtractKnRStyleFunctionDefinition(int * piCorkQueueIndex)
 		);
 	vStringDelete(pChain);
 #endif
-
+	CXXToken * pParenthesis;
+	CXXToken * pIdentifier;
+	CXXToken * x;
 	if(piCorkQueueIndex)
 		*piCorkQueueIndex = CORK_NIL;
 
@@ -75,7 +77,7 @@ int cxxParserMaybeExtractKnRStyleFunctionDefinition(int * piCorkQueueIndex)
 		return 0; // no way
 
 	// There must be a parenthesis chain
-	CXXToken * pParenthesis = cxxTokenChainFirstTokenOfType(
+	pParenthesis = cxxTokenChainFirstTokenOfType(
 			g_cxx.pTokenChain,
 			CXXTokenTypeParenthesisChain
 		);
@@ -83,14 +85,14 @@ int cxxParserMaybeExtractKnRStyleFunctionDefinition(int * piCorkQueueIndex)
 		return 0; // no parenthesis chain
 
 	// The parenthesis chain must have an identifier before it
-	CXXToken * pIdentifier = pParenthesis->pPrev;
+	pIdentifier = pParenthesis->pPrev;
 	if(!pIdentifier)
 		return 0;
 	if(!cxxTokenTypeIs(pIdentifier,CXXTokenTypeIdentifier))
 		return 0;
 
 	// And least three tokens after it
-	CXXToken * x = pParenthesis->pNext;
+	x = pParenthesis->pNext;
 	if(!x)
 		return 0;
 	x = x->pNext;
@@ -1064,7 +1066,7 @@ int cxxParserEmitFunctionTags(
 			cxxTokenAppendToString(pszSignature,pInfo->pSignatureConst);
 		}
 
-		CXXToken * pTypeName;
+		CXXToken * pTypeName; boolean bIsEmptyTemplate;
 
 		if(pInfo->pTypeStart)
 			pTypeName = cxxTagSetTypeField(pInfo->pTypeStart,pInfo->pTypeEnd);
@@ -1074,7 +1076,7 @@ int cxxParserEmitFunctionTags(
 		if(pszSignature)
 			tag->extensionFields.signature = vStringValue(pszSignature);
 
-		boolean bIsEmptyTemplate = FALSE;
+		bIsEmptyTemplate = FALSE;
 
 		if(
 			g_cxx.pTemplateTokenChain && (g_cxx.pTemplateTokenChain->iCount > 0) &&
@@ -1242,6 +1244,7 @@ void cxxParserEmitFunctionParameterTags(CXXFunctionParameterInfo * pInfo)
 	unsigned int i = 0;
 	while(i < pInfo->uParameterCount)
 	{
+		CXXToken * pTypeName;
 		tagEntryInfo * tag = cxxTagBegin(
 				CXXTagKindPARAMETER,
 				pInfo->aIdentifiers[i]
@@ -1250,7 +1253,7 @@ void cxxParserEmitFunctionParameterTags(CXXFunctionParameterInfo * pInfo)
 		if(!tag)
 			return;
 
-		CXXToken * pTypeName;
+		
 
 		if(pInfo->aDeclarationStarts[i] && pInfo->aDeclarationEnds[i])
 		{

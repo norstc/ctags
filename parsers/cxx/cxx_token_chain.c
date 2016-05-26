@@ -150,10 +150,11 @@ void cxxTokenChainTake(CXXTokenChain * tc,CXXToken * t)
 
 boolean cxxTokenChainTakeRecursive(CXXTokenChain * tc,CXXToken * t)
 {
+	CXXToken * aux = NULL;
 	if(!tc)
 		return FALSE;
 
-	CXXToken * aux = tc->pHead;
+	aux = tc->pHead;
 	while(aux)
 	{
 		if(t == aux)
@@ -258,10 +259,11 @@ void cxxTokenChainJoinRangeInString(
 		unsigned int uFlags
 	)
 {
+	CXXToken * t = NULL;
 	if(!from)
 		return;
 
-	CXXToken * t = from;
+	t = from;
 
 	cxxTokenAppendToString(s,t);
 
@@ -294,10 +296,11 @@ vString * cxxTokenChainJoinRange(
 		unsigned int uFlags
 	)
 {
+	vString * s = NULL;
 	if(!from)
 		return NULL;
 
-	vString * s = vStringNew();
+	s = vStringNew();
 
 	cxxTokenChainJoinRangeInString(from,to,s,szSeparator,uFlags);
 
@@ -311,13 +314,14 @@ void cxxTokenChainJoinInString(
 		unsigned int uFlags
 	)
 {
+	CXXToken * t = NULL;
 	if(!tc)
 		return;
 
 	if(tc->iCount == 0)
 		return;
 
-	CXXToken * t = tc->pHead;
+	t = tc->pHead;
 
 	cxxTokenAppendToString(s,t);
 
@@ -352,13 +356,14 @@ vString * cxxTokenChainJoin(
 		unsigned int uFlags
 	)
 {
+	vString * s = NULL;
 	if(!tc)
 		return NULL;
 
 	if(tc->iCount == 0)
 		return NULL;
 
-	vString * s = vStringNew();
+	s = vStringNew();
 
 	cxxTokenChainJoinInString(tc,s,szSeparator,uFlags);
 
@@ -420,12 +425,13 @@ void cxxTokenChainMoveEntryRange(
 
 void cxxTokenChainCondense(CXXTokenChain * tc,unsigned int uFlags)
 {
+	CXXToken * pCondensed;
 	if(!tc)
 		return;
 	if(tc->iCount <= 1)
 		return;
 
-	CXXToken * pCondensed = cxxTokenCreate();
+	pCondensed = cxxTokenCreate();
 
 	pCondensed->eType = CXXTokenTypeUnknown;
 	pCondensed->iLineNumber = tc->pHead->iLineNumber;
@@ -452,13 +458,14 @@ void cxxTokenChainCondense(CXXTokenChain * tc,unsigned int uFlags)
 
 CXXToken * cxxTokenChainAt(CXXTokenChain * tc,int index)
 {
+	CXXToken * pToken;
 	if(!tc)
 		return NULL;
 	if(index < 0)
 		return NULL;
 	if(index >= tc->iCount)
 		return NULL;
-	CXXToken * pToken = tc->pHead;
+	pToken = tc->pHead;
 	while(pToken && index)
 	{
 		index--;
@@ -527,9 +534,10 @@ CXXToken * cxxTokenChainFirstTokenOfType(
 		unsigned int uTokenTypes
 	)
 {
+	CXXToken * t = NULL;
 	if(!tc)
 		return NULL;
-	CXXToken * t = tc->pHead;
+	 t= tc->pHead;
 	while(t)
 	{
 		if(t->eType & uTokenTypes)
@@ -595,9 +603,10 @@ CXXToken * cxxTokenChainLastTokenOfType(
 		unsigned int uTokenTypes
 	)
 {
+	CXXToken * t;
 	if(!tc)
 		return NULL;
-	CXXToken * t = tc->pTail;
+	 t = tc->pTail;
 	while(t)
 	{
 		if(t->eType & uTokenTypes)
@@ -612,16 +621,18 @@ CXXToken * cxxTokenChainLastPossiblyNestedTokenOfType(
 		unsigned int uTokenTypes
 	)
 {
+	CXXToken * t;
+	CXXToken * tmp;
 	if(!tc)
 		return NULL;
-	CXXToken * t = tc->pTail;
+	t = tc->pTail;
 	while(t)
 	{
 		if(t->eType & uTokenTypes)
 			return t;
 		if(t->eType == CXXTokenTypeParenthesisChain)
 		{
-			CXXToken * tmp = cxxTokenChainLastPossiblyNestedTokenOfType(
+			 tmp = cxxTokenChainLastPossiblyNestedTokenOfType(
 					t->pChain,
 					uTokenTypes
 				);
@@ -640,9 +651,10 @@ CXXToken * cxxTokenChainFirstTokenNotOfType(
 		unsigned int uTokenTypes
 	)
 {
+	CXXToken * t;
 	if(!tc)
 		return NULL;
-	CXXToken * t = tc->pHead;
+	 t = tc->pHead;
 	while(t)
 	{
 		if(!(t->eType & uTokenTypes))
@@ -674,9 +686,10 @@ CXXToken * cxxTokenChainLastTokenNotOfType(
 		unsigned int uTokenTypes
 	)
 {
+	CXXToken * t;
 	if(!tc)
 		return NULL;
-	CXXToken * t = tc->pTail;
+	 t = tc->pTail;
 	while(t)
 	{
 		if(!(t->eType & uTokenTypes))
@@ -692,12 +705,13 @@ int cxxTokenChainFindToken(
 		CXXToken * t
 	)
 {
+	CXXToken * pToken;
 	if(!tc)
 		return -1;
 	if(tc->iCount < 1)
 		return -1;
 
-	CXXToken * pToken = tc->pHead;
+	 pToken = tc->pHead;
 	int idx = 0;
 	while(pToken)
 	{
@@ -714,11 +728,12 @@ CXXToken * cxxTokenChainPreviousKeyword(
 		CXXToken * from,
 		enum CXXKeyword eKeyword
 	)
-{
+		{
+	CXXToken * t;
 	if(!from)
 		return NULL;
 
-	CXXToken * t = from->pPrev;
+	 t = from->pPrev;
 	while(t)
 	{
 		if(cxxTokenIsKeyword(t,eKeyword))
@@ -733,11 +748,12 @@ CXXToken * cxxTokenChainNextKeyword(
 		CXXToken * from,
 		enum CXXKeyword eKeyword
 	)
-{
+		{
+	CXXToken * t;
 	if(!from)
 		return NULL;
 
-	CXXToken * t = from->pNext;
+	 t = from->pNext;
 	while(t)
 	{
 		if(cxxTokenIsKeyword(t,eKeyword))
@@ -753,12 +769,13 @@ int cxxTokenChainFirstKeywordIndex(
 		enum CXXKeyword eKeyword
 	)
 {
+	CXXToken * pToken;
 	if(!tc)
 		return -1;
 	if(tc->iCount < 1)
 		return -1;
 
-	CXXToken * pToken = tc->pHead;
+	pToken = tc->pHead;
 	int idx = 0;
 	while(pToken)
 	{
@@ -776,10 +793,11 @@ CXXToken * cxxTokenChainNextIdentifier(
 		const char * szIdentifier
 	)
 {
+	CXXToken * t;
 	if(!from)
 		return NULL;
 
-	CXXToken * t = from->pNext;
+	t = from->pNext;
 	while(t)
 	{
 		if(
@@ -819,10 +837,11 @@ CXXToken * cxxTokenChainExtractRange(
 		unsigned int uFlags
 	)
 {
+	CXXToken * pToken;
 	if(!from)
 		return NULL;
 
-	CXXToken * pToken = from;
+	pToken = from;
 
 	CXXToken * pRet = cxxTokenCreate();
 	pRet->iLineNumber = pToken->iLineNumber;
@@ -860,6 +879,7 @@ CXXToken * cxxTokenChainExtractIndexRange(
 		unsigned int uFlags
 	)
 {
+	CXXToken *pToken; CXXToken * pRet;
 	if(!tc)
 		return NULL;
 	if(iFirstIndex < 0)
@@ -867,7 +887,7 @@ CXXToken * cxxTokenChainExtractIndexRange(
 	if(iFirstIndex >= tc->iCount)
 		return NULL;
 
-	CXXToken * pToken = tc->pHead;
+	pToken = tc->pHead;
 	int idx = 0;
 	while(pToken && (idx < iFirstIndex))
 	{
@@ -878,7 +898,7 @@ CXXToken * cxxTokenChainExtractIndexRange(
 	if(!pToken)
 		return NULL;
 
-	CXXToken * pRet = cxxTokenCreate();
+	 pRet = cxxTokenCreate();
 	pRet->iLineNumber = pToken->iLineNumber;
 	pRet->oFilePosition = pToken->oFilePosition;
 
@@ -921,6 +941,7 @@ void cxxTokenChainNormalizeTypeNameSpacing(CXXTokenChain * pChain)
 
 void cxxTokenChainNormalizeTypeNameSpacingInRange(CXXToken * pFrom,CXXToken * pTo)
 {
+	CXXToken * t;
 	if(!pFrom || !pTo)
 		return;
 
@@ -937,7 +958,7 @@ void cxxTokenChainNormalizeTypeNameSpacingInRange(CXXToken * pFrom,CXXToken * pT
 	// ClassA<ClassB<type *,type>> <-- fixme: not sure about the trailing >>
 	// Class<Something> (*)(type[])
 
-	CXXToken * t = pFrom;
+	t = pFrom;
 
 	for(;;)
 	{

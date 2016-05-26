@@ -1,0 +1,3 @@
+Visual studio 2013 build inro:
+1.open project file
+2.set "project properties"->C/C++->advanced->compile as ->C (/TC)

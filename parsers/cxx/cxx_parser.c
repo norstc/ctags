@@ -68,6 +68,7 @@ boolean cxxParserParseAndCondenseCurrentSubchain(
 		boolean bAcceptEOF
 	)
 {
+	boolean bRet;
 	CXXTokenChain * pCurrentChain = g_cxx.pTokenChain;
 
 	g_cxx.pTokenChain = cxxTokenChainCreate();
@@ -90,7 +91,7 @@ boolean cxxParserParseAndCondenseCurrentSubchain(
 	unsigned int uTokenTypes = g_cxx.pToken->eType << 4;
 	if(bAcceptEOF)
 		uTokenTypes |= CXXTokenTypeEOF;
-	boolean bRet = cxxParserParseAndCondenseSubchainsUpToOneOf(
+	bRet = cxxParserParseAndCondenseSubchainsUpToOneOf(
 			uTokenTypes,
 			uInitialSubchainMarkerTypes
 		);
@@ -532,6 +533,7 @@ boolean cxxParserParseClassStructOrUnion(
 		enum CXXTagKind eTagKind
 	)
 {
+	boolean bRet;
 	CXX_DEBUG_ENTER();
 
 	// make sure that there is only the class/struct/union keyword in the chain
@@ -571,7 +573,7 @@ boolean cxxParserParseClassStructOrUnion(
 	if(eTagKind != CXXTagKindCLASS)
 		uTerminatorTypes |= CXXTokenTypeParenthesisChain;
 
-	boolean bRet;
+	
 
 	for(;;)
 	{
